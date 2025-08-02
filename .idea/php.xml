@@ -22,7 +22,7 @@
       <path value="$PROJECT_DIR$/src/vendor/composer" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.3" />
   <component name="PhpStan">
     <PhpStan_settings>
       <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="9b510b88-3a9b-4eb9-9825-51e0dc4777bb" timeout="60000" />

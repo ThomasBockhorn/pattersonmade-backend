@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\enums\getStars;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -41,6 +42,7 @@ class Testimonial extends Model
     {
         return [
             'id' => 'integer',
+            'starStatus' => getStars::class,
         ];
     }
 }

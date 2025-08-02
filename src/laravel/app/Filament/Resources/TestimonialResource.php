@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Enums\getStars;
 
 class TestimonialResource extends Resource
 {
@@ -35,7 +36,9 @@ class TestimonialResource extends Resource
                 Forms\Components\Textarea::make('comment')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('star')
+                Forms\Components\Select::make('star rating')
+                    ->label('Star Rating')
+                    ->options(getStars::class)
                     ->required(),
             ]);
     }
