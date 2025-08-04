@@ -25,7 +25,9 @@ class TestimonialFactory extends Factory
             'title' => fake()->sentence(4),
             'company' => fake()->company(),
             'comment' => fake()->text(),
-            'star' => fake()->randomElement(["oneStar","twoStar","threeStar","fourStar","fiveStar"]),
+            'star' => $this->faker->numberBetween(1, 5),
+            'created_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
+            'updated_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
         ];
     }
 }

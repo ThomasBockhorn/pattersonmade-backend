@@ -21,7 +21,7 @@ class ProjectTagFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
+            'tagName' => fake()->sentence(4),
         ];
     }
 }

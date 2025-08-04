@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\BlogTag;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\BlogPost;
@@ -23,8 +24,8 @@ class BlogPostFactory extends Factory
         return [
             'title' => fake()->sentence(4),
             'description' => fake()->text(),
-            'link' => fake()->regexify('[A-Za-z0-9]{100}'),
-            'image' => fake()->regexify('[A-Za-z0-9]{100}'),
+            'link' => fake()->url(),
+            'image' => fake()->imageUrl(640, 480),
         ];
     }
 }

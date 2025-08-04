@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * @property int $id
- * @property string $name
+ * @property string $title
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  */
@@ -22,7 +22,7 @@ class ProjectTag extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'tagName',
     ];
 
     /**

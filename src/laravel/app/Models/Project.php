@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * @property int $id
@@ -43,8 +43,8 @@ class Project extends Model
         ];
     }
 
-    public function projectTags(): HasMany
+    public function projectTags(): belongsToMany
     {
-        return $this->hasMany(ProjectTag::class);
+        return $this->belongsToMany(ProjectTag::class);
     }
 }

@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blog_post_blog_tag', function (Blueprint $table) {
-            $table->foreignId('blog_post_id');
-            $table->foreignId('blog_tag_id');
+        Schema::create('testimonials', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('title');
+            $table->string('company');
+            $table->text('comment');
+            $table->tinyInteger('star');
+            $table->timestamps();
         });
     }
 
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('blog_post_blog_tag');
+        Schema::dropIfExists('testimonials');
     }
 };

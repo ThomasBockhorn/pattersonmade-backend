@@ -22,7 +22,7 @@ class BlogTag extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'tagName',
     ];
 
     /**

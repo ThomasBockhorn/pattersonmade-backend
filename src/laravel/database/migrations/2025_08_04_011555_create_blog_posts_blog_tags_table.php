@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('projects', function (Blueprint $table) {
-            $table->id();
-            $table->string('title', 100);
-            $table->text('description');
-            $table->string('link', 100);
-            $table->string('image', 100);
+        Schema::create('blog_post_blog_tag', function (Blueprint $table) {
+            $table->primary(['blog_post_id', 'blog_tag_id']);
+            $table->foreignId('blog_post_id')->constrained()->on('blog_posts');
+            $table->foreignId('blog_tag_id')->constrained()->on('blog_tags');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('blog_posts_blog_tags');
     }
 };

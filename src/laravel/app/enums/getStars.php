@@ -4,16 +4,22 @@ namespace App\enums;
 
 use Filament\Support\Contracts\HasLabel;
 
-enum getStars: string implements HasLabel
+enum getStars: int implements HasLabel
 {
-    case oneStar = 'one Star';
-    case twoStars = 'two Stars';
-    case threeStars = 'three Stars';
-    case fourStars = 'four Stars';
-    case fiveStars = 'five Stars';
+    case oneStar = 1;
+    case twoStars = 2;
+    case threeStars = 3;
+    case fourStars = 4;
+    case fiveStars = 5;
 
     public function getLabel(): ?string
     {
-       return $this->value;
+        return match ($this) {
+            self::oneStar => '1 Star',
+            self::twoStars => '2 Stars',
+            self::threeStars => '3 Stars',
+            self::fourStars => '4 Stars',
+            self::fiveStars => '5 Stars',
+        };
     }
 }

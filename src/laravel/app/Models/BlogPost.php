@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * @property int $id
@@ -43,8 +43,8 @@ class BlogPost extends Model
         ];
     }
 
-    public function blogTags(): HasMany
+    public function blogTags(): BelongsToMany
     {
-        return $this->hasMany(BlogTag::class);
+        return $this->belongsToMany(BlogTag::class);
     }
 }

@@ -36,7 +36,7 @@ class TestimonialResource extends Resource
                 Forms\Components\Textarea::make('comment')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\Select::make('star rating')
+                Forms\Components\Select::make('star')
                     ->label('Star Rating')
                     ->options(getStars::class)
                     ->required(),
