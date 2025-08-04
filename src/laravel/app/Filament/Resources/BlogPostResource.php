@@ -30,11 +30,9 @@ class BlogPostResource extends Resource
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('link')
-                    ->required()
                     ->maxLength(100),
                 Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->required(),
+                    ->image(),
                 Forms\Components\Select::make('blogTags')
                     ->label('Blog Tags')
                     ->relationship('blogTags', 'tagName')
