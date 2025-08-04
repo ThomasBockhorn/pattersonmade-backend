@@ -14,7 +14,7 @@ class BlogTagResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
+            'tagName' => $this->tagName,
             'blogPosts' => BlogPostCollection::make($this->whenLoaded('blogPosts')),
         ];
     }

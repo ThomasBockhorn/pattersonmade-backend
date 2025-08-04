@@ -14,7 +14,7 @@ class ProjectTagResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
+            'tagName' => $this->tagName,
             'projects' => ProjectCollection::make($this->whenLoaded('projects')),
         ];
     }
